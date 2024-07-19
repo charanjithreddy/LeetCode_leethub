@@ -10,9 +10,3 @@ class Solution(object):
                     if(matrix[i][j]==max(s)):
                         o.append(matrix[i][j]);
         return o;
-
-        """
-        :type matrix: List[List[int]]
-        :rtype: List[int]
-        """
-        
