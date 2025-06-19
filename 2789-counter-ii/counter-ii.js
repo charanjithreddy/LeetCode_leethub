@@ -16,9 +16,7 @@ var createCounter = function(init) {
             return init;
         }
     }
-    
 };
-
 /**
  * const counter = createCounter(5)
  * counter.increment(); // 6
