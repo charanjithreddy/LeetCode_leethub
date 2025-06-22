@@ -3,7 +3,7 @@ class Solution(object):
         o=[];
         l=len(s);
         for i in range(l//k):
-            o.append(s[k*i:k*i+k]);
+            o.append(s[k*i:k*(i+1)]);
         r=l%k;
         if(r!=0):
             o.append(s[k*((l//k-1)+1):]+(k-r)*fill);
