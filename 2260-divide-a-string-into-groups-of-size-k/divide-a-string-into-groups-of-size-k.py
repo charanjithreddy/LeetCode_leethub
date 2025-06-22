@@ -1,13 +1,12 @@
 class Solution(object):
     def divideString(self, s, k, fill):
         o=[];
-        t=0;
-        for i in range(len(s)//k):
+        l=len(s);
+        for i in range(l//k):
             o.append(s[k*i:k*i+k]);
-            t=k*i+k;
-        r=len(s)%k;
+        r=l%k;
         if(r!=0):
-            o.append(s[k*(len(s)//k-1)+k:]+(k-r)*fill);
+            o.append(s[k*(l//k-1)+k:]+(k-r)*fill);
         return o
         """
         :type s: str
@@ -15,4 +14,3 @@ class Solution(object):
         :type fill: str
         :rtype: List[str]
         """
-        
