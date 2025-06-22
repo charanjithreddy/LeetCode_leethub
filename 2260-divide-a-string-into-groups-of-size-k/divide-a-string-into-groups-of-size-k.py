@@ -7,7 +7,7 @@ class Solution(object):
             t=k*i+k;
         r=len(s)%k;
         if(r!=0):
-            o.append(s[t:]+(k-r)*fill);
+            o.append(s[k*(len(s)//k-1)+k:]+(k-r)*fill);
         return o
         """
         :type s: str
