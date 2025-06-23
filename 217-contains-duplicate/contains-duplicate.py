@@ -1,11 +1,11 @@
 class Solution(object):
     def containsDuplicate(self, nums):
-        d={};
+        d=set();
         for i in nums:
             if(i in d):
                 return True;
             else:
-                d[i]=1;
+                d.add(i);
         return False;
         """
         :type nums: List[int]
