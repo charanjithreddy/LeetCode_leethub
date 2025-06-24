@@ -22,12 +22,9 @@ class Solution(object):
                 for j in range(max(i+1,o[-1]+1),x+1):
                     o.append(j);
         return o;
-                
-
         """
         :type nums: List[int]
         :type key: int
         :type k: int
         :rtype: List[int]
         """
-        
