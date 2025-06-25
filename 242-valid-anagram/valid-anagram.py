@@ -2,8 +2,9 @@ class Solution(object):
     def isAnagram(self, s, t):
         if(len(s)!=len(t)):
             return False;
-        sh={};
-        th={};
+        sh={i:s.count(i) for i in list(set(s))};
+        th={i:t.count(i) for i in list(set(t))};
+        """
         for i in s:
             if(i not in sh):
                 sh[i]=1;
@@ -13,7 +14,7 @@ class Solution(object):
             if(i not in th):
                 th[i]=1;
             else:
-                th[i]+=1;
+                th[i]+=1;"""
         if(len(sh)!=len(th)):
             return False;
         for i in sh:
