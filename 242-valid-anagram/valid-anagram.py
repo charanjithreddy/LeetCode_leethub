@@ -4,17 +4,6 @@ class Solution(object):
             return False;
         sh={i:s.count(i) for i in list(set(s))};
         th={i:t.count(i) for i in list(set(t))};
-        """
-        for i in s:
-            if(i not in sh):
-                sh[i]=1;
-            else:
-                sh[i]+=1;
-        for i in t:
-            if(i not in th):
-                th[i]=1;
-            else:
-                th[i]+=1;"""
         if(len(sh)!=len(th)):
             return False;
         for i in sh:
