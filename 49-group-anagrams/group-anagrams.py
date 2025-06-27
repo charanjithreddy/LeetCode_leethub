@@ -2,10 +2,11 @@ class Solution(object):
     def groupAnagrams(self, strs):
         d={};
         for i in strs:
-            if("".join(sorted(i)) in d):
-                d["".join(sorted(i))].append(i);
+            x="".join(sorted(i));
+            if(x in d):
+                d[x].append(i);
             else:
-                d["".join(sorted(i))]=[i];
+                d[x]=[i];
         return [d[i] for i in d];
         """
         :type strs: List[str]
