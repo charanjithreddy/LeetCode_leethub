@@ -21,7 +21,6 @@ var expect = function(val) {
             }
         }
     }
-    
 };
 
 /**
