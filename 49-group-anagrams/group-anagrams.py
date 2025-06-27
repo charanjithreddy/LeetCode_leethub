@@ -7,9 +7,7 @@ class Solution(object):
             else:
                 d["".join(sorted(i))]=[i];
         return [d[i] for i in d];
-
         """
         :type strs: List[str]
         :rtype: List[List[str]]
         """
-        
