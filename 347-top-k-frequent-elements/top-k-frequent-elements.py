@@ -13,10 +13,8 @@ class Solution(object):
         for i in c:
             o.extend(c[i]);
         return o[-1*k:];
-
         """
         :type nums: List[int]
         :type k: int
         :rtype: List[int]
         """
-        
