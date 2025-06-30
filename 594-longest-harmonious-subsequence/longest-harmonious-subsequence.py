@@ -3,23 +3,15 @@ class Solution(object):
         d={};
         o=0;
         for i in nums:
-            if(i-1 in d):
-                if(i in d):
-                    o=max(o,d[i-1]+d[i]+1);
-                else:
-                    o=max(o,d[i-1]+1);
-            if(i+1 in d):
-                if(i in d):
-                    o=max(o,d[i+1]+d[i]+1);
-                else:
-                    o=max(o,d[i+1]+1);
             if(i in d):
                 d[i]+=1;
             else:
                 d[i]=1;
+        for i in d:
+            if(i+1 in d):
+                o=max(o,d[i]+d[i+1]);
         return o;
         """
         :type nums: List[int]
         :rtype: int
-        """
-        
+        """        
