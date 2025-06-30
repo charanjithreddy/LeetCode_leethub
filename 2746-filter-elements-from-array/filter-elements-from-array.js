@@ -8,8 +8,7 @@ var filter = function(arr, fn) {
    let x=0;
    for(let i=0;i<arr.length;i++){
     if(fn(arr[i],i)){
-        o[x]=arr[i];
-        x++;
+        o[x++]=arr[i];
     }
    } 
    return o;
