@@ -11,10 +11,8 @@ class Solution(object):
                 t=1;
                 curr=i;
         o+=t-1;
-
         return o;
         """
         :type word: str
         :rtype: int
         """
-        
