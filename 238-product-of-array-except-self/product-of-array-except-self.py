@@ -10,10 +10,7 @@ class Solution(object):
             x*=nums[i+1];
             o[i]*=x;
         return o;
-
-
         """
         :type nums: List[int]
         :rtype: List[int]
         """
-        
