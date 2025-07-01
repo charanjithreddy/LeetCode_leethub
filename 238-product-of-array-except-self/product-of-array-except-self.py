@@ -1,6 +1,6 @@
 class Solution(object):
     def productExceptSelf(self, nums):
-        o=[1 for i in range(len(nums))];
+        o=[1 for i in nums];
         x=1;
         for i in range(1,len(nums)):
             x*=nums[i-1];
