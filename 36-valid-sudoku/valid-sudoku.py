@@ -1,10 +1,15 @@
 class Solution(object):
     def isValidSudoku(self, board):
+        for i in range(9):
+            for j in range(9):
+                if(board[i][j]=="."):
+                    board[i][j]=10;
+                else:
+                    board[i][j]=int(board[i][j]);
         for  i in board:
             a=[0]*10;
             for j in i:
-                if(j!="."):
-                    j=int(j);
+                if(j<10):
                     a[j]+=1;
                     if(a[j]>1):
                         return False;
@@ -14,8 +19,7 @@ class Solution(object):
                 x.append(board[j][i]);
             a=[0]*10;
             for j in x:
-                if(j!="."):
-                    j=int(j);
+                if(j<10):
                     a[j]+=1;
                     if(a[j]>1):
                         return False;
@@ -27,8 +31,7 @@ class Solution(object):
                         x.append(board[r][c]);
                 a=[0]*10;
                 for ele in x:
-                    if(ele!="."):
-                        ele=int(ele);
+                    if(ele<10):
                         a[ele]+=1;
                         if(a[ele]>1):
                             return False;             
