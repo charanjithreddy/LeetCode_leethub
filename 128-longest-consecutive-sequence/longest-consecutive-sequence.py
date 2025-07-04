@@ -11,9 +11,7 @@ class Solution(object):
                     c+=1;
                 o=max(o,c)
         return o;
-
         """
         :type nums: List[int]
         :rtype: int
         """
-        
