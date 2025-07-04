@@ -4,12 +4,10 @@ class Solution(object):
         nums=set(nums);
         for i in nums:
             if(i-1 not in nums):
-                c=1;
                 temp=i;
                 while(temp+1 in nums):
                     temp+=1;
-                    c+=1;
-                o=max(o,c)
+                o=max(o,temp-i+1)
         return o;
         """
         :type nums: List[int]
