@@ -1,15 +1,15 @@
 class FindSumPairs(object):    
     def __init__(self, nums1, nums2):
-        self.nums1=nums1;
+        #self.nums1=nums1;
         self.nums2=nums2;
         self.d1={};
         self.d2={};
-        for i in self.nums1:
+        for i in nums1:
             if(i in self.d1):
                 self.d1[i]+=1;
             else:
                 self.d1[i]=1;
-        for i in self.nums2:
+        for i in nums2:
             if(i in self.d2):
                 self.d2[i]+=1;
             else:
@@ -33,9 +33,9 @@ class FindSumPairs(object):
         """
     def count(self, tot):
         c=0;
-        for i in self.nums1:
+        for i in self.d1:
             if(tot-i in self.d2):
-                c+=self.d2[tot-i];
+                c+=self.d2[tot-i]*self.d1[i];
         return c;
         """
         :type tot: int
