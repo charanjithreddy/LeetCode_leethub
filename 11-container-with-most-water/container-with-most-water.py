@@ -5,7 +5,8 @@ class Solution(object):
         right=len(height)-1;
         while(left<right):
             area=(right-left)*min(height[left],height[right]);
-            o=max(o,area);
+            if(area>o):
+                o=area;
             if(height[left]<height[right]):
                 left+=1;
             else:
