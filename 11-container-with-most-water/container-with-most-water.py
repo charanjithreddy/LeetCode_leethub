@@ -10,9 +10,7 @@ class Solution(object):
             else:
                 right-=1;
         return o;
-
         """
         :type height: List[int]
         :rtype: int
         """
-        
