@@ -1,6 +1,5 @@
 class FindSumPairs(object):    
     def __init__(self, nums1, nums2):
-        #self.nums1=nums1;
         self.nums2=nums2;
         self.d1={};
         self.d2={};
