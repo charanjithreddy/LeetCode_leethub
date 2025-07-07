@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+select round(count(case when a2.player_id is not null then a2.player_id end)/count(*),2) as fraction from Activity a1 left join Activity a2 on a1.player_id=a2.player_id and date_add(a1.event_date,interval 1 day)=a2.event_date where a1.event_date in (select min(a3.event_date) from Activity a3 where a3.player_id=a1.player_id);
