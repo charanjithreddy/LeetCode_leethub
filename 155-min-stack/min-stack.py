@@ -4,7 +4,10 @@ class MinStack(object):
         self.a=[];
         
     def push(self, val):
-        self.a.append(val);
+        if(len(self.a)==0):
+            self.a.append([val,val]);
+        else:
+            self.a.append([val,min(val,self.a[-1][1])]);
         """
         :type val: int
         :rtype: None
@@ -19,14 +22,14 @@ class MinStack(object):
         
 
     def top(self):
-        return self.a[-1];
+        return self.a[-1][0];
         """
         :rtype: int
         """
         
 
     def getMin(self):
-        return min(self.a);
+        return self.a[-1][1];
         """
         :rtype: int
         """
