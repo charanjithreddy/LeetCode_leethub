@@ -3,8 +3,7 @@ class Solution(object):
         o=[];
         for i in tokens:
             if(i=="+"):
-                res=int(o.pop())+int(o.pop());
-                o.append(res);
+                o.append(int(o.pop())+int(o.pop()));
             elif(i=="-"):
                 res=int(o.pop());
                 o.append(int(o.pop())-res);
