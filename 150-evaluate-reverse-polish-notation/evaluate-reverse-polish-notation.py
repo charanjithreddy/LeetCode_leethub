@@ -11,8 +11,7 @@ class Solution(object):
                 o.append(int(o.pop())*int(o.pop()));
             elif(i=="/"):
                 res=float(o.pop());
-                res=int(o.pop())/res;
-                o.append(int(res));
+                o.append(int(int(o.pop())/res));
             else:
                 o.append(int(i));
         return o[0];
