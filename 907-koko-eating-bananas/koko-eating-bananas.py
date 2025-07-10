@@ -14,10 +14,7 @@ class Solution(object):
                         o+=i//mid;
                     else:
                         o+=i//mid+1;
-            if(o==h):
-                res=min(mid,res);
-                right=mid-1;
-            elif(o<h):
+            if(o<=h):
                 res=min(mid,res);
                 right=mid-1;
             else:
