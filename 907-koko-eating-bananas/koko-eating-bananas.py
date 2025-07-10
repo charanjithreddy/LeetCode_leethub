@@ -1,9 +1,8 @@
-import math;
 class Solution(object):
     def minEatingSpeed(self, piles, h):
         left=1;
         right=max(piles);
-        res=right;
+        res=max(piles);
         while(left<=right):
             mid=(left+right)//2;
             o=0;
@@ -15,13 +14,15 @@ class Solution(object):
                         o+=i//mid;
                     else:
                         o+=i//mid+1;
-            if(o<=h):
+            if(o==h):
+                res=min(mid,res);
+                right=mid-1;
+            elif(o<h):
                 res=min(mid,res);
                 right=mid-1;
             else:
                 left=mid+1;
         return res;
-
         """
         :type piles: List[int]
         :type h: int
