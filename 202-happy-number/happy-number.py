@@ -7,9 +7,7 @@ class Solution(object):
                 n//=10;
             n=t;
         return n==1;
-
         """
         :type n: int
         :rtype: bool
         """
-        
