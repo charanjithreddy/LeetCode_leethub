@@ -9,9 +9,7 @@ class Solution(object):
             if(players[p]<=trainers[t]):
                 o+=1;
                 p+=1;
-                t+=1;
-            else:
-                t+=1;
+            t+=1;
         return o;
         """
         :type players: List[int]
