@@ -13,10 +13,8 @@ class Solution(object):
             else:
                 t+=1;
         return o;
-
         """
         :type players: List[int]
         :type trainers: List[int]
         :rtype: int
         """
-        
