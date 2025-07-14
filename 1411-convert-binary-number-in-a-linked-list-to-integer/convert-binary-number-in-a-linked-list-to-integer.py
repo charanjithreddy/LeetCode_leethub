@@ -16,9 +16,7 @@ class Solution(object):
             n-=1;
             head=head.next;
         return o;
-
         """
         :type head: Optional[ListNode]
         :rtype: int
         """
-        
