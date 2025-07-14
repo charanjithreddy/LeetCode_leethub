@@ -13,12 +13,10 @@ int getDecimalValue(struct ListNode* head) {
         n++;
         temp=temp->next;
     }
-    temp=head;
-    while(temp!=NULL){
-        res+=(temp->val)*pow(2,n-1);
+    while(head!=NULL){
+        res+=(head->val)*pow(2,n-1);
         n--;
-        temp=temp->next;
+        head=head->next;
     }
     return res;
-
 }
