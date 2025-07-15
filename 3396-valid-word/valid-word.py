@@ -8,8 +8,12 @@ class Solution(object):
         for i in word:
             if(i in vowels):
                 v+=1;
+                if(v>=1 and c>=1):
+                    return True;
             elif(i.isalpha()):
                 c+=1;
+                if(v>=1 and c>=1):
+                    return True;
         return v>=1 and c>=1;
 
         """
