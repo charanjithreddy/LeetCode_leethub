@@ -13,56 +13,34 @@ class Solution(object):
         elif(list2==None):
             return list1;
         else:
-            temp1=list1;
-            temp2=list2;
+            temp=None;
             if(list1.val<list2.val):
-                temp=temp1;
-                temp1=temp1.next;
-                while(temp1!=None and temp2!=None):
-                    if(temp1.val<temp2.val):
-                        temp.next=temp1;
-                        temp=temp.next;
-                        temp1=temp1.next;
-                    else:
-                        temp.next=temp2;
-                        temp=temp.next;
-                        temp2=temp2.next;
-                while(temp1):
-                    temp.next=temp1;
-                    temp=temp.next;
-                    temp1=temp1.next;
-                while(temp2):
-                    temp.next=temp2;
-                    temp=temp.next;
-                    temp2=temp2.next;
-                return list1;
+                temp=list1;
+                list1=list1.next;
             else:
-                temp=temp2;
-                temp2=temp2.next;
-                while(temp1!=None and temp2!=None):
-                    if(temp1.val<temp2.val):
-                        temp.next=temp1;
-                        temp=temp.next;
-                        temp1=temp1.next;
-                    else:
-                        temp.next=temp2;
-                        temp=temp.next;
-                        temp2=temp2.next;
-                while(temp1):
-                    temp.next=temp1;
+                temp=list2;
+                list2=list2.next;
+            head=temp;
+            while(list1!=None and list2!=None):
+                if(list1.val<list2.val):
+                    temp.next=list1;
                     temp=temp.next;
-                    temp1=temp1.next;
-                while(temp2):
-                    temp.next=temp2;
+                    list1=list1.next;
+                else:
+                    temp.next=list2;
                     temp=temp.next;
-                    temp2=temp2.next;
-                return list2;
-
-
-                
+                    list2=list2.next;
+            while(list1):
+                temp.next=list1;
+                temp=temp.next;
+                list1=list1.next;
+            while(list2):
+                temp.next=list2;
+                temp=temp.next;
+                list2=list2.next;
+            return head;
         """
         :type list1: Optional[ListNode]
         :type list2: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
-        
