@@ -5,13 +5,13 @@
 #         self.next = None
 class Solution(object):
     def hasCycle(self, head):
-        s=set();
-        while(head!=None):
-            if(head in s):
-                return True;
-            else:
-                s.add(head);
+        temp=head;
+        while(temp!=None and temp.next!=None):
+            
             head=head.next;
+            temp=temp.next.next;
+            if(head==temp):
+                return True;
         return False;
         """
         :type head: ListNode
