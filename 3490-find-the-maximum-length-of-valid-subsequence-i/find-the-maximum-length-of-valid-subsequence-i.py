@@ -6,16 +6,11 @@ class Solution(object):
         for i in nums:
             if(i%2==0):
                 e+=1;
-                if(len(comb)==0):
+                if(len(comb)==0 or comb[-1]%2==1):
                     comb.append(i);
-                elif(comb[-1]%2==1):
-                    comb.append(i);
-                
             else:
                 o+=1;
-                if(len(comb)==0):
-                    comb.append(i);
-                elif(comb[-1]%2==0):
+                if(len(comb)==0 or comb[-1]%2==0):
                     comb.append(i);
         return max(o,e,len(comb));
         """
