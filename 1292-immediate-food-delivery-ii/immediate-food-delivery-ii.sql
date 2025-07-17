@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+select round(count(case when d1.order_date=d1.customer_pref_delivery_date then d1.order_date end)/count(d1.order_date)*100,2) as immediate_percentage from Delivery d1 left join Delivery d2 on d1.customer_id=d2.customer_id and d1.order_date>d2.order_date where d2.delivery_id is null
