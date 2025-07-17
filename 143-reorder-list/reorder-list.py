@@ -6,42 +6,44 @@
 class Solution(object):
     def reorderList(self, head):
         n=0;
-        temp=head;
-        while(temp!=None):
-            temp=temp.next;
+        temp1=head;
+        while(temp1!=None):
             n+=1;
+            temp1=temp1.next;
         if(n!=1):
-            temp=head;
             temp1=head;
-            x=None;
+            temp2=head;
             for i in range(n//2):
                 if(i==n//2-1):
-                    x=temp1;
-                temp1=temp1.next;
-            x.next=None;
+                    x=temp2.next;
+                    temp2.next=None;
+                    temp2=x;
+                else:
+                    temp2=temp2.next;
             prev=None;
-            curr=temp1;
+            curr=temp2;
             after=None;
             while(curr!=None):
                 after=curr.next;
                 curr.next=prev;
                 prev=curr;
                 curr=after;
-            temp1=prev;
-            pointer=head;
-            temp=temp.next;
-            while(temp!=None and temp1!=None):
-                pointer.next=temp1;
-                pointer=pointer.next;
-                temp1=temp1.next;
-                pointer.next=temp;
-                pointer=pointer.next;
-                temp=temp.next;
-            pointer.next=temp1;
-            pointer=pointer.next;
+            temp2=prev;    
+            temp=head;
             temp1=temp1.next;
+            while(temp1!=None and temp2!=None):
+                temp.next=temp2;
+                temp=temp.next;
+                temp2=temp2.next;
+
+                temp.next=temp1;
+                temp=temp.next;
+                temp1=temp1.next;
+            while(temp2!=None):
+                temp.next=temp2
+                temp=temp.next;
+                temp2=temp2.next;
         """
         :type head: Optional[ListNode]
         :rtype: None Do not return anything, modify head in-place instead.
         """
-        
