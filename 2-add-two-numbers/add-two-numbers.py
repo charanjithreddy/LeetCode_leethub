@@ -45,11 +45,8 @@ class Solution(object):
             temp.next=None;
             curr.next=temp;
         return head;
-            
-
         """
         :type l1: Optional[ListNode]
         :type l2: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
-        
