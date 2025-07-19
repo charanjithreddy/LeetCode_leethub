@@ -9,15 +9,6 @@ class Solution(object):
                     folder.pop(j);
                 else:
                     j+=1;
-            """
-            x=1;
-            for j in o:
-                s=j+'/';
-                if(s in i and i.index(s)==0):
-                    x=0;
-                    break;
-            if(x==1):
-                o.add(i);"""
         return folder;
         """
         :type folder: List[str]
