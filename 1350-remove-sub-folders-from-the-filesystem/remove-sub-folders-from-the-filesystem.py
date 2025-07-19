@@ -5,7 +5,7 @@ class Solution(object):
         for i in folder:
             x=1;
             for j in o:
-                if(j in i and i.index(j)==0 and i[len(j)]=='/'):
+                if(j+'/' in i and i.index(j+'/')==0):
                     x=0;
                     break;
             if(x==1):
