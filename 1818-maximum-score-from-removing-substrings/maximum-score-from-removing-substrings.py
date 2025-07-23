@@ -2,36 +2,25 @@ class Solution(object):
     def maximumGain(self, s, x, y):
         stack=[];
         res=0;
+        def func(s,check,value):
+            res=0;
+            for i in range(len(s)):
+                if(s[i]==check[1] and len(stack)>0 and stack[-1]==check[0]):
+                    res+=value;
+                    stack.pop();
+                else:
+                    stack.append(s[i]);
+            return res;
         if(x>y):
-            for i in range(len(s)):
-                if(s[i]=="b" and len(stack)>0 and stack[-1]=="a"):
-                    res+=x;
-                    stack.pop();
-                else:
-                    stack.append(s[i]);
+            res+=func(s,"ab",x)
             s="".join(stack);
             stack=[];
-            for i in range(len(s)):
-                if(s[i]=="a" and len(stack)>0 and stack[-1]=="b"):
-                    res+=y;
-                    stack.pop();
-                else:
-                    stack.append(s[i]);
+            res+=func(s,"ba",y)
         else:
-            for i in range(len(s)):
-                if(s[i]=="a" and len(stack)>0 and stack[-1]=="b"):
-                    res+=y;
-                    stack.pop();
-                else:
-                    stack.append(s[i]);
+            res+=func(s,"ba",y);
             s="".join(stack);
             stack=[];
-            for i in range(len(s)):
-                if(s[i]=="b" and len(stack)>0 and stack[-1]=="a"):
-                    res+=x;
-                    stack.pop();
-                else:
-                    stack.append(s[i]);
+            res+=func(s,"ab",x);
         return res;      
         """
         :type s: str
