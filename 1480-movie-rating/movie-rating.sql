@@ -1,0 +1,4 @@
+# Write your MySQL query statement below
+select name as results from (select name from (select u.name,count(m.movie_id) as cnt from MovieRating m join Users u on m.user_id=u.user_id group by m.user_id) as x order by cnt desc,name limit 1 ) as t1
+union all
+select title as results from (select title from (select m1.title,sum(rating)/count(rating) as avg from Movies m1 left join (select * from MovieRating where created_at between date_format("2020-02-01","%Y-%m-%d") and date_format("2020-02-29","%Y-%m-%d")) as m2 on m1.movie_id=m2.movie_id group by m1.movie_id) as y order by avg desc,title limit 1) as t2;
