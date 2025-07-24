@@ -6,11 +6,9 @@ class Solution(object):
             if(x==0 or n==1):
                 return x;
             if(n%2==0):
-                temp=self.myPow(x,n//2);
-                return temp*temp;
+                return self.myPow(x*x,n//2);
             else:
-                temp=self.myPow(x,n//2);
-                return x*temp*temp;
+                return x*self.myPow(x*x,n//2);
         res=func(x,abs(n));
         if(n>=0):
             return res;
