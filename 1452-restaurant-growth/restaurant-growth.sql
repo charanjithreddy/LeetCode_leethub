@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+select t1.visited_on,sum(amount) as amount,round(sum(amount)/7,2) as average_amount from (select distinct visited_on from customer where visited_on>=date_add((select min(visited_on) from Customer),interval 6 day)) as t1 left join Customer t2 on t2.visited_on between date_add(t1.visited_on,interval -6 day) and t1.visited_on group by t1.visited_on;
