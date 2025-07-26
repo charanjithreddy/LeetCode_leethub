@@ -12,7 +12,7 @@ class Solution(object):
             else:
                 return 1+max(self.maxDepth(root.left),self.maxDepth(root.right));
         else:
-            return 0;0
+            return 0;
         """
         :type root: Optional[TreeNode]
         :rtype: int
