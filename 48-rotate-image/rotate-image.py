@@ -1,15 +1,10 @@
 class Solution(object):
     def rotate(self, matrix):
-        a=[];
         n=len(matrix);
+        matrix.reverse();
         for i in range(n):
-            o=[];
-            for j in range(n):
-                o.append(matrix[j][i]);
-            a.append(o[::-1]);
-        for i in range(n):
-            for j in range(n):
-                matrix[i][j]=a[i][j];
+            for j in range(i+1,n):
+                matrix[i][j],matrix[j][i]=matrix[j][i],matrix[i][j];
         """
         :type matrix: List[List[int]]
         :rtype: None Do not return anything, modify matrix in-place instead.
