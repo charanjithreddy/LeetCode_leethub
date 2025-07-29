@@ -7,10 +7,10 @@ class Solution(object):
             if(s==target):
                 o.append(list(l));
                 return;
-            for j in range(i,len(candidates)):
-                l.append(candidates[j]);
-                func(j,s+candidates[j],l);
-                l.pop();
+            l.append(candidates[i]);
+            func(i,s+candidates[i],l);
+            l.pop();
+            func(i+1,s,l)
         func(0,0,[]);
         return o;
         """
