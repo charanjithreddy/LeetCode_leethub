@@ -5,10 +5,9 @@ class Solution(object):
             if(i==len(nums)):
                 o.append(list(l));
                 return;
+            func(i+1,list(l));
             l.append(nums[i]);
-            func(i+1,l);
-            l.pop();
-            func(i+1,l);
+            func(i+1,list(l));
         func(0,[]);
         return o;
         """
