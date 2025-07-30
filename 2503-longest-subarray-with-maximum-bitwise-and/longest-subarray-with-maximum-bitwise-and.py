@@ -7,13 +7,14 @@ class Solution(object):
             if(i==m):
                 curr+=1;
             else:
-                o=max(o,curr);
+                if(curr>o):
+                    o=curr;
                 curr=0;
-        
-        return max(o,curr);           
-
+        if(curr>o):
+            return curr;
+        else:
+            return o;       
         """
         :type nums: List[int]
         :rtype: int
-        """
-        
+        """       
