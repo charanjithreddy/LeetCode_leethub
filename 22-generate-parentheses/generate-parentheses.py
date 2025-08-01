@@ -14,7 +14,7 @@ class Solution(object):
                     func(s+"(",open+1,close);
                     func(s+")",open,close+1);
         func("",0,0);
-        return list(set(o));
+        return o;
         """
         :type n: int
         :rtype: List[str]
