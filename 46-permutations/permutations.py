@@ -1,8 +1,9 @@
 class Solution(object):
     def permute(self, nums):
         o=[];
+        n=len(nums);
         def func(i,l):
-            if(i==len(nums)):
+            if(i==n):
                 o.append(list(l));
                 return;
             for j in range(len(l)+1):
@@ -15,4 +16,3 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-        
