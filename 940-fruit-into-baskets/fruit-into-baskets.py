@@ -11,7 +11,7 @@ class Solution(object):
             elif(len(d)==2 and fruits[i] in d):
                 d[fruits[i]]+=1;
             else:
-                o=max(o,sum(list(d.values())));
+                o=max(o,sum(d.values()));
                 x=fruits[i-1];
                 j=i-1;
                 t=1;
@@ -25,7 +25,7 @@ class Solution(object):
                         break;
                 del d[x];
                 d[fruits[i]]=1;
-        return max(o,sum(list(d.values())));
+        return max(o,sum(d.values()));
 
         """
         :type fruits: List[int]
