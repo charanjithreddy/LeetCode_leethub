@@ -3,11 +3,13 @@ class Solution(object):
         visited=[0]*len(fruits);
         c=0;
         for i in fruits:
-            for j in range(len(fruits)):
-                if(visited[j]==0 and i<=baskets[j]):
-                    visited[j]=1;
-                    break;            
-        return visited.count(0);
+            j=0;
+            while(j<len(baskets)):
+                if(i<=baskets[j]):
+                    baskets.pop(j);
+                    break;
+                j+=1;
+        return len(baskets);
         """
         :type fruits: List[int]
         :type baskets: List[int]
