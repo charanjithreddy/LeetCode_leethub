@@ -1,9 +1,13 @@
 class Solution(object):
     def productQueries(self, n, queries):
         t=[];
-        while(n>0):
-            t.insert(0,(2**(int(math.log(n,2)))));
-            n-=2**(int(math.log(n,2)));
+        n=bin(n)[2:][::-1];
+        i=0;
+        while(i<len(n)):
+            if(n[i]=="1"):
+                t.append(2**i);
+            i+=1;
+
         o=[];
         for [a,b] in queries:
             temp=1;
