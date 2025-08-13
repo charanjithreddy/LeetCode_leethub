@@ -5,7 +5,8 @@ class Solution(object):
                 return True;
             elif(n%3!=0):
                 return False;
-            n/=3;
+            while(n%3==0):
+                n/=3;
         return False;
         """
         :type n: int
