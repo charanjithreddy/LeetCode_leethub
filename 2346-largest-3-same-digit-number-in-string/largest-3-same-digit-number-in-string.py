@@ -1,15 +1,9 @@
 class Solution(object):
     def largestGoodInteger(self, num):
-        a=0;
-        b=1;
-        c=2;
         res="";
-        while(c<len(num)):
-            if(num[a]==num[b]==num[c]):
-                res=max(res,num[a]+num[b]+num[c]);
-            a+=1;
-            b+=1;
-            c+=1;
+        for i in range(2,len(num)):
+            if(num[i-2]==num[i-1]==num[i]):
+                res=max(res,num[i-2:i+1]);
         return res;
         """
         :type num: str
