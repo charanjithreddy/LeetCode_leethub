@@ -1,13 +1,5 @@
 class Solution(object):
     def zeroFilledSubarray(self, nums):
-        def fact(n):
-            if(n==0):
-                return 0;
-            else:
-                t=0;
-                for i in range(n,-1,-1):
-                    t+=i;
-                return t;
         res=0;
         if(0 not in nums):
             return res;
@@ -18,12 +10,11 @@ class Solution(object):
             elif(nums[i]==0):
                 cnt=1;
             else:
-                res+=fact(cnt);
+                res+=((cnt*(cnt+1))/2);
                 cnt=0;
-        res+=fact(cnt);
+        res+=((cnt*(cnt+1))/2);
         return res;
         """
         :type nums: List[int]
         :rtype: int
         """
-        
