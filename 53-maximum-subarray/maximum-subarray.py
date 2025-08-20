@@ -9,10 +9,7 @@ class Solution(object):
                 t+=i;
             res=max(res,t);
         return res;
-            
-
         """
         :type nums: List[int]
         :rtype: int
         """
-        
