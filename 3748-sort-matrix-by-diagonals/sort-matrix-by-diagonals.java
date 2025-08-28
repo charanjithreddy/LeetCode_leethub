@@ -10,7 +10,6 @@ class Solution {
                 arr.add(grid[j][t]);
                 t+=1;
                 j+=1;
-
             }
             Collections.sort(arr);
             temp.addAll(arr);
