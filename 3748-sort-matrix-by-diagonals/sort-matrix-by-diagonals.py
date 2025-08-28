@@ -1,6 +1,6 @@
 class Solution(object):
     def sortMatrix(self, grid):
-        o=[];
+        arr=[];
         n=len(grid);
         for i in range(len(grid)-1,0,-1):
             t=i;
@@ -11,7 +11,7 @@ class Solution(object):
                 j+=1;
                 t+=1;
             temp.sort();
-            o.append(temp);
+            arr.extend(temp);
         
         for i in range(len(grid)):
             t=i;
@@ -22,11 +22,7 @@ class Solution(object):
                 j+=1;
                 t+=1;
             temp.sort(reverse=True);
-            o.append(temp);
-        arr=[];
-        for i in o:
-            for j in i:
-                arr.append(j);
+            arr.extend(temp);
         ind=0;
         for i in range(len(grid)-1,0,-1):
             t=i;
