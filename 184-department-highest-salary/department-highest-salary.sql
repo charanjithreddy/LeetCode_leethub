@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+select d.name as department,e.name as employee,e.salary  from employee e left join department d on e.departmentId=d.id where (departmentId,salary) in (select departmentId, max(Salary) from employee group by departmentId);
