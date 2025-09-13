@@ -6,17 +6,14 @@ class Solution(object):
                 d[i]+=1;
             else:
                 d[i]=1;
-        vowels="aeiou";
-        dv=set();
-        dc=set();
-        dv.add(0);
-        dc.add(0);
+        dv=0;
+        dc=0;
         for i in d:
-            if(i in vowels):
-                dv.add(d[i]);
+            if(i in "aeiou"):
+                dv=max(dv,d[i]);
             else:
-                dc.add(d[i]);
-        return max(dc)+max(dv);       
+                dc=max(dc,d[i]);
+        return dv+dc;      
         """
         :type s: str
         :rtype: int
