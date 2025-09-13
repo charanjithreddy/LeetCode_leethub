@@ -7,16 +7,16 @@ class Solution(object):
             else:
                 d[i]=1;
         vowels="aeiou";
-        dv={};
-        dv['A']=0;
-        dc={};
-        dc['B']=0;
+        dv=set();
+        dc=set();
+        dv.add(0);
+        dc.add(0);
         for i in d:
             if(i in vowels):
-                dv[i]=d[i];
+                dv.add(d[i]);
             else:
-                dc[i]=d[i];
-        return max(list(dv.values()))+max(list(dc.values()));        
+                dc.add(d[i]);
+        return max(dc)+max(dv);       
         """
         :type s: str
         :rtype: int
