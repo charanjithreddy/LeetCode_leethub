@@ -1,19 +1,17 @@
 class Solution(object):
     def insert(self, intervals, newInterval):
-        o=[];
-        for i in intervals:
-            if(i[1]<newInterval[0] or i[0]>newInterval[1]):
-                o.append(i);
+        res=[];
+        for [a,b] in intervals:
+            if(newInterval[0]>b or newInterval[1]<a):
+                res.append([a,b]);
             else:
-                if(i[0]<newInterval[0]):
-                    newInterval[0]=i[0];
-                if(i[1]>newInterval[1]):
-                    newInterval[1]=i[1];
-        o.append(newInterval);
-        o=sorted(o,key=lambda x:x[0]);
-        return o;
+                newInterval[0]=min(newInterval[0],a);
+                newInterval[1]=max(newInterval[1],b);
+        res.append(newInterval);
+        return sorted(res);
         """
         :type intervals: List[List[int]]
         :type newInterval: List[int]
         :rtype: List[List[int]]
         """
+        
