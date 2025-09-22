@@ -8,11 +8,7 @@ class Solution(object):
                 m=max(m,d[i]);
             else:
                 d[i]=1;
-        res=0;
-        for i in d:
-            if(d[i]==m):
-                res+=m;
-        return res;
+        return list(d.values()).count(m)*m;
         """
         :type nums: List[int]
         :rtype: int
