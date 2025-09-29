@@ -6,7 +6,6 @@ class Solution(object):
         mark=[];
         for i in range(m):
             mark.append([0 for j in range(n)]);
-        
         def func(r,c):
             mark[r][c]=1;
             if(r+1<m and grid[r+1][c]=='1' and mark[r+1][c]==0):
