@@ -11,10 +11,10 @@ class Solution(object):
             if(root!=None):
                 if(root.left==None and root.right==None):
                     return 1;
-                left=func(root.left);
-                right=func(root.right);
-                self.res=max(self.res,left+right);
-                return 1+max(left,right);
+                l=func(root.left);
+                r=func(root.right);
+                self.res=max(self.res,l+r);
+                return 1+max(l,r);
             else:
                 return 0;
         func(root);
