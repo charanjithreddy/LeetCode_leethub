@@ -8,6 +8,8 @@ class Solution(object):
     def isBalanced(self, root):
         self.res=True;
         def func(root):
+            if(self.res==False):
+                return 0;
             if(root!=None):
                 if(root.left==None and root.right==None):
                     return 1;
