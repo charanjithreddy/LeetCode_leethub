@@ -4,7 +4,6 @@ class Solution(object):
         m=len(grid);
         n=len(grid[0]);
         visited=[[0 for i in range(n)]for i in range(m)];
-
         def func(i,j):
             visited[i][j]=1;
             if(i+1<m and grid[i+1][j]==1 and visited[i+1][j]==0):
@@ -29,4 +28,3 @@ class Solution(object):
         :type grid: List[List[int]]
         :rtype: int
         """
-        
