@@ -16,4 +16,3 @@ class Solution(object):
         :type numExchange: int
         :rtype: int
         """
-        
