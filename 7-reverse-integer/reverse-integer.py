@@ -4,10 +4,7 @@ class Solution(object):
         if(x<0):
             mul=-1;
             x*=-1;
-        res=0;
-        while(x>0):
-            res=res*10+x%10;
-            x//=10;
+        res=int(str(x)[::-1]);
         res*=mul;
         if(-1*2**31<=res<=2**31-1):
             return res;
