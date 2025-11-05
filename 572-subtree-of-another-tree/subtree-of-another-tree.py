@@ -17,7 +17,6 @@ class Solution(object):
                     return False;
                 else:
                     return same(root.left,subRoot.left) and same(root.right,subRoot.right);
-
         def inorder(root):
             if(root!=None):
                 inorder(root.left);
