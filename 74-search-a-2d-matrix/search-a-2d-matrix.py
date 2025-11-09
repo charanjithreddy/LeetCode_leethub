@@ -5,21 +5,23 @@ class Solution(object):
         top=0;
         bottom=m-1;
         while(top<=bottom):
-            mid=(top+bottom)//2;
-            if(matrix[mid][0]<=target):
-                left=0;
-                right=n-1;
-                while(left<=right):
-                    col=(left+right)//2;
-                    if(matrix[mid][col]==target):
+            mid1=(top+bottom)//2;
+            if(matrix[mid1][0]<=target<=matrix[mid1][-1]):
+                l=0;
+                r=n-1;
+                while(l<=r):
+                    mid=(l+r)//2;
+                    if(matrix[mid1][mid]==target):
                         return True;
-                    elif(matrix[mid][col]<target):
-                        left=col+1;
+                    elif(matrix[mid1][mid]>target):
+                        r=mid-1;
                     else:
-                        right=col-1;
-                top=mid+1;            
+                        l=mid+1;  
+                break;              
+            elif(matrix[mid1][0]>target):
+                bottom=mid1-1;
             else:
-                bottom=mid-1;
+                top=mid1+1;
         return False;
         """
         :type matrix: List[List[int]]
