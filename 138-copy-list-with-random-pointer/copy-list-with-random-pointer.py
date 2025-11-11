@@ -6,7 +6,6 @@ class Node:
         self.next = next
         self.random = random
 """
-
 class Solution(object):
     def copyRandomList(self, head):
         t={};
@@ -16,7 +15,6 @@ class Solution(object):
             new=Node(temp.val);
             t[temp]=new;
             temp=temp.next;
-
         temp=head;
         while(temp!=None):
             t[temp].next=t[temp.next];
@@ -27,4 +25,3 @@ class Solution(object):
         :type head: Node
         :rtype: Node
         """
-        
