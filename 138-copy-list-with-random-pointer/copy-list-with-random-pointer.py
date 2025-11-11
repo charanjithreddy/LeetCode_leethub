@@ -8,8 +8,7 @@ class Node:
 """
 class Solution(object):
     def copyRandomList(self, head):
-        t={};
-        t[None]=None;
+        t={None:None};
         temp=head;
         while(temp!=None):
             new=Node(temp.val);
