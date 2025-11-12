@@ -10,9 +10,8 @@ class Solution(object):
         queue=[];
         queue.append(root);
         while(queue):
-            l=len(queue);
             t=[];
-            for i in range(l):
+            for i in range(len(queue)):
                 temp=queue.pop(0);
                 if(temp):
                     t.append(temp.val);
@@ -25,4 +24,3 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: List[List[int]]
         """
-        
