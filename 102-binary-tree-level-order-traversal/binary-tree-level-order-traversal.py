@@ -12,7 +12,7 @@ class Solution(object):
             t=[];
             for i in range(len(queue)):
                 temp=queue.pop(0);
-                if(temp):
+                if(temp!=None):
                     t.append(temp.val);
                     queue.append(temp.left);
                     queue.append(temp.right);
