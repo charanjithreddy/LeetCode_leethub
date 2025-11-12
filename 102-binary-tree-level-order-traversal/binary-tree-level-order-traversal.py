@@ -8,7 +8,7 @@ class Solution(object):
     def levelOrder(self, root):
         res=[];
         queue=[root];
-        while(queue):
+        while(len(queue)>0):
             t=[];
             for i in range(len(queue)):
                 temp=queue.pop(0);
@@ -16,7 +16,7 @@ class Solution(object):
                     t.append(temp.val);
                     queue.append(temp.left);
                     queue.append(temp.right);
-            if(t):
+            if(len(t)>0):
                 res.append(t);
         return res;
         """
