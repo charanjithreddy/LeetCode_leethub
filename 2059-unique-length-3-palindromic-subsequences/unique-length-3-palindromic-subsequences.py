@@ -9,9 +9,7 @@ class Solution(object):
         for i in first:
             res+=len(set(s[first[i]+1:last[i]]));
         return res;
-
         """
         :type s: str
         :rtype: int
         """
-        
