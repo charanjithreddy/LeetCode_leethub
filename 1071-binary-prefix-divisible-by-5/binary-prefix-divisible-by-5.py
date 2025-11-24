@@ -1,10 +1,10 @@
 class Solution(object):
     def prefixesDivBy5(self, nums):
         val=0;
-        res=[];
-        for i in nums:
-            val=val*2+i;
-            res.append(val%5==0);
+        res=[nums[0]%5==0];
+        for i in range(1,len(nums)):
+            nums[i]=nums[i-1]*2+nums[i];
+            res.append(nums[i]%5==0);
         return res;
         """
         :type nums: List[int]
