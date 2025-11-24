@@ -1,6 +1,5 @@
 class Solution(object):
     def prefixesDivBy5(self, nums):
-        val=0;
         res=[nums[0]%5==0];
         for i in range(1,len(nums)):
             nums[i]=nums[i-1]*2+nums[i];
