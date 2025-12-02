@@ -17,6 +17,8 @@ class Solution(object):
             if(root):
                 func2(root.left);
                 a2.append(root.val);
+                if(target-root.val in a1):
+                    return;
                 func2(root.right);
         func1(root1);
         func2(root2);
