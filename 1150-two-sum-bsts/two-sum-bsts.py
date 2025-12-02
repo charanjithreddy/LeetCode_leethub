@@ -8,16 +8,18 @@ class Solution(object):
     def twoSumBSTs(self, root1, root2, target):
         a1=[];
         a2=[];
+        res=[0];
         def func1(root):
             if(root):
                 func1(root.left);
                 a1.append(root.val);
                 func1(root.right);
         def func2(root):
-            if(root):
+            if(root and res[0]==0):
                 func2(root.left);
                 a2.append(root.val);
                 if(target-root.val in a1):
+                    res[0]=1;
                     return;
                 func2(root.right);
         func1(root1);
