@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+select seller_name from Seller s left join (select * from orders where year(sale_date)='2020') o on s.seller_id=o.seller_id where o.order_id is null order by seller_name
