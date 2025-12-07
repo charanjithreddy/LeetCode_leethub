@@ -9,4 +9,3 @@ class Solution(object):
         :type high: int
         :rtype: int
         """
-        
