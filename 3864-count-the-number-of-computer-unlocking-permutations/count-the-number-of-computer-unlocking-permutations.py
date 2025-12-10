@@ -4,7 +4,7 @@ class Solution(object):
             if(n==0 or n==1):
                 return 1;
             else:
-                return (n*fact(n-1))
+                return (n*fact(n-1))%(10**9+7);
         if(complexity[0]!=sorted(complexity)[1] and min(complexity)==complexity[0]):
             return (fact(len(complexity)-1))%(10**9+7);
         else:
