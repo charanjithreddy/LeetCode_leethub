@@ -10,8 +10,30 @@ class Solution(object):
         elif(list2==None):
             return list1;
         else:
+            head=None;
+
             if(list1.val<list2.val):
-                temp1=list1.next;
+                head=list1;
+                list1=list1.next;
+
+            else:
+                head=list2;
+                list2=list2.next;
+            temp=head;
+            while(list1!=None and list2!=None):
+                if(list1.val<list2.val):
+                    temp.next=list1;
+                    list1=list1.next
+                else:
+                    temp.next=list2;
+                    list2=list2.next;
+                temp=temp.next;
+            if(list1!=None):
+                temp.next=list1;
+            if(list2!=None):
+                temp.next=list2;
+            return head;
+            """
                 temp2=list2;
                 temp=list1;
                 while(temp1!=None and temp2!=None):
@@ -44,7 +66,7 @@ class Solution(object):
                 if(temp2==None):
                     temp.next=temp1;
                 return list2;
-
+            """
 
         """
         :type list1: Optional[ListNode]
