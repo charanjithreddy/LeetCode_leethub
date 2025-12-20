@@ -1,7 +1,6 @@
 class Solution(object):
     def minDeletionSize(self, strs):
-        l=max([len(i) for i in strs])
-        a=[[] for i in range(l)];
+        a=[[] for i in range(max([len(i) for i in strs]))];
         for i in strs:
             for j in range(len(i)):
                 a[j].append(i[j]);
@@ -14,4 +13,3 @@ class Solution(object):
         :type strs: List[str]
         :rtype: int
         """
-        
