@@ -1,10 +1,7 @@
 class Solution(object):
     def maximumHappinessSum(self, happiness, k):
-        happiness.sort(reverse=True)
-        res=0;
-        for i in range(min(k,len(happiness))):
-            res+=max(happiness[i]-i,0);
-        return res;
+        happiness.sort(reverse=True);
+        return sum([max(happiness[i]-i,0) for i in range(min(k,len(happiness)))]);
         """
         :type happiness: List[int]
         :type k: int
