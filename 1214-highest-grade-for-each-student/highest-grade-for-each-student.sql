@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+select e.student_id,min(e.course_id) as course_id,e.grade from enrollments e right join ( select student_id,max(grade) as g_max from enrollments group by student_id) as t on e.student_id=t.student_id and e.grade=t.g_max group by e.student_id order by student_id asc
