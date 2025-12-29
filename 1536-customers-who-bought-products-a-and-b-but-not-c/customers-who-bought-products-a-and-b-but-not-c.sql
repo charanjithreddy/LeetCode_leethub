@@ -1,0 +1,3 @@
+# Write your MySQL query statement below
+select * from customers where customer_id in (
+select customer_id from ( select c.customer_id,c.customer_name,o1.product_name as A,o2.product_name as B,o3.product_name as C from customers c left join (select * from orders where product_name='A') as o1 on c.customer_id=o1.customer_id left join (select * from orders where product_name='B') as o2 on c.customer_id=o2.customer_id left join (select * from orders where product_name='C') as o3 on c.customer_id=o3.customer_id) as t where A is not null and B is not null and C is null )
