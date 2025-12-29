@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+select t1.person as person1,t2.person as person2,count(duration) as call_count,sum(duration) as total_duration from (select distinct(from_id) as person from calls union select distinct(to_id) as person from calls) as t1 cross join (select distinct(from_id) as person from calls union select distinct(to_id) as person from calls ) as t2 left join calls c on (t1.person=from_id and t2.person=to_id) or (t2.person=from_id and t1.person=to_id) where duration is not null and t1.person<t2.person group by t1.person,t2.person
