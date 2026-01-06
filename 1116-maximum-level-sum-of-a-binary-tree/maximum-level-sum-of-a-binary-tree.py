@@ -12,7 +12,7 @@ class Solution(object):
             t=[];
             res.append(0);
             for i in arr:
-                if(i is not None):
+                if(i):
                     res[-1]+=i.val;
                     t.append(i.left);
                     t.append(i.right);
