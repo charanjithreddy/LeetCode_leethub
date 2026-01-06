@@ -16,10 +16,7 @@ class Solution(object):
                     res[-1]+=i.val;
                     t.append(i.left);
                     t.append(i.right);
-            arr=[];
-            for i in t:
-                if(i is not None):
-                    arr.append(i);
+            arr=[i for i in t if i]
         return res.index(max(res))+1;
         """
         :type root: Optional[TreeNode]
