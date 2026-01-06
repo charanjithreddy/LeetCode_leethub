@@ -8,7 +8,7 @@ class Solution(object):
     def maxLevelSum(self, root):
         arr=[root];
         res=[];
-        while(len(arr)>0):
+        while(arr):
             t=[];
             res.append(0);
             for i in arr:
