@@ -1,4 +1,3 @@
-
 select player_id,player_name,sum(cnt) as grand_slams_count  from (
 select player_id,player_name,count(year) as cnt from players join championships on player_id=wimbledon group by player_id
 union all
