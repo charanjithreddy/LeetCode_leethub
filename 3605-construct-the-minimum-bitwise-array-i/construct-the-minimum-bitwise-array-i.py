@@ -11,7 +11,6 @@ class Solution(object):
             if(flag==1):
                 res.append(-1);
         return res;
-
         """
         :type nums: List[int]
         :rtype: List[int]
