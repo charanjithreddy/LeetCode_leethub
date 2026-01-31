@@ -9,4 +9,3 @@ class Solution(object):
         :type target: str
         :rtype: str
         """
-        
