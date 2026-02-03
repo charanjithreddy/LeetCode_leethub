@@ -8,6 +8,8 @@ class Solution(object):
                 p+=1;
             else:
                 break;
+        if(flag1==0):
+            return False;
         q=p;
         while(q<len(nums)-1):
             if(nums[q+1]<nums[q]):
@@ -16,13 +18,15 @@ class Solution(object):
             else:
                 break;
         r=q;
+        if(flag2==0):
+            return False;
         while(r<len(nums)-1):
             if(nums[r+1]>nums[r]):
                 flag3=1;
                 r+=1;
             else:
                 break;
-        return r==len(nums)-1 and flag1==1 and flag2==1 and flag3==1;
+        return r==len(nums)-1 and flag3==1;
         """
         :type nums: List[int]
         :rtype: bool
