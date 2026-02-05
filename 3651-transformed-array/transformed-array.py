@@ -1,7 +1,7 @@
 class Solution(object):
     def constructTransformedArray(self, nums):
         n=len(nums);
-        res=list(nums);
+        res=[0]*n;
         for i in range(len(nums)):
             if(nums[i]>0):
                 res[i]=(nums[(i+nums[i])%n]);
