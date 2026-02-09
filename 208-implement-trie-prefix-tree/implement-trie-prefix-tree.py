@@ -1,11 +1,21 @@
+class Node():
+    def __init__(self):
+        self.next={};
+        self.last=False;
+
 class Trie(object):
 
     def __init__(self):
-        self.l=[];
+        self.root=Node();
         
 
     def insert(self, word):
-        self.l.append(word);
+        temp=self.root;
+        for i in word:
+            if(i not in temp.next):
+                temp.next[i]=Node();
+            temp=temp.next[i];
+        temp.last=True;
         """
         :type word: str
         :rtype: None
@@ -13,7 +23,12 @@ class Trie(object):
         
 
     def search(self, word):
-        return word in self.l;
+        temp=self.root;
+        for i in word:
+            if(i not in temp.next):
+                return False;
+            temp=temp.next[i];
+        return temp.last;
         """
         :type word: str
         :rtype: bool
@@ -21,10 +36,12 @@ class Trie(object):
         
 
     def startsWith(self, prefix):
-        for i in self.l:
-            if(i[:len(prefix)]==prefix):
-                return True;
-        return False;
+        temp=self.root;
+        for i in prefix:
+            if(i not in temp.next):
+                return False;
+            temp=temp.next[i];
+        return True;
         """
         :type prefix: str
         :rtype: bool
