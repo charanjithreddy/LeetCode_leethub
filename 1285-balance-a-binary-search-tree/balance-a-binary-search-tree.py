@@ -6,7 +6,6 @@
 #         self.right = right
 class Solution(object):
     def balanceBST(self, root):
-
         def func(arr,left,right):
             if(left<=right):
                 mid=(left+right)/2;
@@ -14,10 +13,8 @@ class Solution(object):
                 root.left=func(arr,left,mid-1);
                 root.right=func(arr,mid+1,right);
                 return root;
-
             else:
                 return None;
-
         arr=[];
         def func1(root):
             if(root!=None):
@@ -30,4 +27,3 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: Optional[TreeNode]
         """
-        
