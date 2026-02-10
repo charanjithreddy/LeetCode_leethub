@@ -7,8 +7,6 @@ class WordDictionary(object):
     def __init__(self):
         self.root=Node()
 
-        
-
     def addWord(self, word):
         cur=self.root;
         for i in word:
@@ -20,7 +18,6 @@ class WordDictionary(object):
         :type word: str
         :rtype: None
         """
-        
 
     def search(self, word):
         cur=self.root;
@@ -30,8 +27,7 @@ class WordDictionary(object):
             if(word[i]=="."):
                 for j in cur.next:
                     if(func(i+1,cur.next[j])):
-                        return True;
-                    
+                        return True;        
                 return False;      
             elif(word[i] in cur.next):
                 return func(i+1,cur.next[word[i]]);
