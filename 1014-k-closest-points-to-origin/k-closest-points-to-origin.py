@@ -4,7 +4,7 @@ class Solution(object):
         heapq.heapify(arr);
         d={};
         for i in points:
-            dist=(i[0]**2+i[1]**2);
+            dist=i[0]*i[0]+i[1]*i[1]
             if(dist in d):
                 d[dist].append(i);
             else:
