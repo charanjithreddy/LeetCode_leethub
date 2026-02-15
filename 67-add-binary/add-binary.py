@@ -64,14 +64,8 @@ class Solution(object):
             return "".join(res)
         else:
             return "".join(res[1:])
-        
-
-
-
-
         """
         :type a: str
         :type b: str
         :rtype: str
         """
-        
