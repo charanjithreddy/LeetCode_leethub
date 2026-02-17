@@ -4,11 +4,10 @@ class Solution(object):
         for i in range(12):
             b=bin(i)[2:];
             ones=b.count("1");
-            s=str(i);
             if(ones in hours):
-                hours[ones].append(s);
+                hours[ones].append(str(i));
             else:
-                hours[ones]=[s];        
+                hours[ones]=[str(i)];        
         minutes={};
         for i in range(60):
             b=bin(i)[2:];
