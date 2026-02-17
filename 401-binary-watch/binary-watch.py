@@ -1,11 +1,14 @@
 class Solution(object):
     def readBinaryWatch(self, turnedOn):
-        hours={
-            0:["0"],
-            1:["1","2","4","8"],
-            2:["3","5","6","9","10"],
-            3:["7","11"]
-        }
+        hours={};
+        for i in range(12):
+            b=bin(i)[2:];
+            ones=b.count("1");
+            s=str(i);
+            if(ones in hours):
+                hours[ones].append(s);
+            else:
+                hours[ones]=[s];        
         minutes={};
         for i in range(60):
             b=bin(i)[2:];
