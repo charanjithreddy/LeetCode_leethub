@@ -1,20 +1,22 @@
 class Solution(object):
     def generateParenthesis(self, n):
-        o=[];
-        def func(s,open,close):
+        res=[];
+        def func(open,close,s):
             if(open==close):
                 if(open==n):
-                    o.append(s);
+                    if(s not in res):
+                        res.append(s);
+                    return;
                 else:
-                    func(s+"(",open+1,close);
-            if(open>close):
-                if(open==n):
-                    func(s+")",open,close+1);
-                else:
-                    func(s+"(",open+1,close);
-                    func(s+")",open,close+1);
-        func("",0,0);
-        return o;
+                    func(open+1,close,s+"(");
+            if(open<n):
+                func(open+1,close,s+"(");
+            if(close<open):
+                func(open,close+1,s+")")
+
+
+        func(1,0,"(");
+        return res;
         """
         :type n: int
         :rtype: List[str]
