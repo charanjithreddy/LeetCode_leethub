@@ -12,8 +12,6 @@ class Solution(object):
                 func(open+1,close,s+"(");
             if(close<open):
                 func(open,close+1,s+")")
-
-
         func(1,0,"(");
         return list(res);
         """
