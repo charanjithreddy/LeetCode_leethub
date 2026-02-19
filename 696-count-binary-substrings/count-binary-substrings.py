@@ -11,7 +11,6 @@ class Solution(object):
                 prev=curr;
                 curr=1;
         return res+min(prev,curr)
-        
         """
         :type s: str
         :rtype: int
