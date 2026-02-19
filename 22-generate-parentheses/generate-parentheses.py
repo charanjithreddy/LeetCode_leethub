@@ -1,11 +1,10 @@
 class Solution(object):
     def generateParenthesis(self, n):
-        res=[];
+        res=set();
         def func(open,close,s):
             if(open==close):
                 if(open==n):
-                    if(s not in res):
-                        res.append(s);
+                    res.add(s);
                     return;
                 else:
                     func(open+1,close,s+"(");
@@ -16,7 +15,7 @@ class Solution(object):
 
 
         func(1,0,"(");
-        return res;
+        return list(res);
         """
         :type n: int
         :rtype: List[str]
