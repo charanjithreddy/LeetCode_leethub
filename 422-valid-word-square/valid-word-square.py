@@ -6,11 +6,9 @@ class Solution(object):
                     if(words[i][j]!=words[j][i]):
                         return False;
             return True;
-        
         except IndexError as e:
             return False;
         """
         :type words: List[str]
         :rtype: bool
         """
-        
