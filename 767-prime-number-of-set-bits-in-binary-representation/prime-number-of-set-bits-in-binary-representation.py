@@ -1,17 +1,19 @@
 class Solution(object):
     def countPrimeSetBits(self, left, right):
-        def isprime(n):
-            if(n<=1):
-                return False
-            i=2;
-            while(i*i<=n):
-                if(n%i==0):
-                    return False;
-                i+=1;
-            return True
-        res=0;
+        s=set();
+        for i in range(2,int(math.ceil(math.log(right,2)))+2):
+            j=2;
+            flag=0;
+            while(j*j<=i):
+                if(i%j==0):
+                    flag=1;
+                    break;
+                j+=1;
+            if(flag==0):
+                s.add(i)
+        res=0
         for i in range(left,right+1):
-            if(isprime(bin(i)[2:].count("1"))):
+            if(bin(i)[2:].count("1") in s):
                 res+=1;
         return res;
         """
