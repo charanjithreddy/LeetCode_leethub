@@ -19,4 +19,3 @@ class Solution(object):
         :type right: int
         :rtype: int
         """
-        
