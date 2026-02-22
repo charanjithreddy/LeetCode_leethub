@@ -28,4 +28,3 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: bool
         """
-        
