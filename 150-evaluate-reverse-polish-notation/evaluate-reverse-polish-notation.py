@@ -1,21 +1,29 @@
 class Solution(object):
     def evalRPN(self, tokens):
-        o=[];
+        stack=[];
         for i in tokens:
             if(i=="+"):
-                o.append(int(o.pop())+int(o.pop()));
+                b=stack.pop();
+                a=stack.pop();
+                stack.append(int(a)+int(b));
             elif(i=="-"):
-                res=int(o.pop());
-                o.append(int(o.pop())-res);
+                b=stack.pop();
+                a=stack.pop();
+                stack.append(int(a)-int(b))
             elif(i=="*"):
-                o.append(int(o.pop())*int(o.pop()));
+                b=stack.pop();
+                a=stack.pop();
+                stack.append(int(a)*int(b));
             elif(i=="/"):
-                res=float(o.pop());
-                o.append(int(int(o.pop())/res));
+                b=stack.pop();
+                a=stack.pop();
+                stack.append(int(a)/float(b));
             else:
-                o.append(int(i));
-        return o[0];
+                stack.append(i);
+        return int(stack[0]);
+
         """
         :type tokens: List[str]
         :rtype: int
         """
+        
