@@ -6,7 +6,7 @@ class Solution(object):
             if(b in d):
                 d[b].append(i);
             else:
-                d[b]=[i];
+                d[b]=[i]
         res=[];
         for i in sorted(d):
             res.extend(sorted(d[i]));
@@ -15,4 +15,3 @@ class Solution(object):
         :type arr: List[int]
         :rtype: List[int]
         """
-        
