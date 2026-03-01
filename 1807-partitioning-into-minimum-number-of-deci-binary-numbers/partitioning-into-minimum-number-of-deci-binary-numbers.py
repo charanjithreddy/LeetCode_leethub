@@ -5,4 +5,3 @@ class Solution(object):
         :type n: str
         :rtype: int
         """
-        
