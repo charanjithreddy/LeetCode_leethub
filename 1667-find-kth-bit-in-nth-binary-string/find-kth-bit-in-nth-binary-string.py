@@ -1,6 +1,13 @@
 class Solution(object):
     def findKthBit(self, n, k):
         def invert(s):
+            temp=list(s);
+            for i in range(len(temp)):
+                if(temp[i]=="1"):
+                    temp[i]="0";
+                else:
+                    temp[i]="1";
+            return "".join(temp)
             temp=""
             for i in s:
                 if(i=="1"):
