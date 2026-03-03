@@ -8,13 +8,6 @@ class Solution(object):
                 else:
                     temp[i]="1";
             return "".join(temp)
-            temp=""
-            for i in s:
-                if(i=="1"):
-                    temp+="0";
-                else:
-                    temp+="1";
-            return temp;
         def func(n):
             if(n==1):
                 return "0";
