@@ -15,9 +15,7 @@ class Solution(object):
                 if(mat[i][j]==1 and len(rows[i])==1 and len(cols[j])==1):
                     res+=1;
         return res
-
         """
         :type mat: List[List[int]]
         :rtype: int
         """
-        
