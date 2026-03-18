@@ -15,11 +15,8 @@ class Solution(object):
                 func(root.right,l+1);
         func(root,0)
         if(res):
-            res.sort();
-            if(len(res)%2==1):
-                return res[len(res)//2];
-            else:
-                return res[len(res)//2]
+            #res.sort();
+            return res[len(res)//2]
         else:
             return -1
         """
