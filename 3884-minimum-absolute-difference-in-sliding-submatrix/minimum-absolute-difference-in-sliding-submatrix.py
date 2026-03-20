@@ -15,15 +15,10 @@ class Solution(object):
                     res[-1].append(0);
                 else:
                     t.sort()
-                    t=[t[z+1]-t[z] for z in range(len(t)-1)];
-                    res[-1].append(min(t));
-                
-                
+                    res[-1].append(min([t[z+1]-t[z] for z in range(len(t)-1)])); 
         return res
-
         """
         :type grid: List[List[int]]
         :type k: int
         :rtype: List[List[int]]
         """
-        
