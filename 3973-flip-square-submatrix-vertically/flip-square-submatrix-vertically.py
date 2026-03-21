@@ -11,7 +11,6 @@ class Solution(object):
             for j in range(k):
                 grid[x+i][y+j]=t[i][j]
         return grid
-
         """
         :type grid: List[List[int]]
         :type x: int
@@ -19,4 +18,3 @@ class Solution(object):
         :type k: int
         :rtype: List[List[int]]
         """
-        
