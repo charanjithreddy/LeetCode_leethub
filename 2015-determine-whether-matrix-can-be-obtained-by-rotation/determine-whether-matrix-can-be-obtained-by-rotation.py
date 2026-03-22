@@ -14,11 +14,8 @@ class Solution(object):
             if(mat==target):
                 return True;
         return False
-
-
         """
         :type mat: List[List[int]]
         :type target: List[List[int]]
         :rtype: bool
         """
-        
