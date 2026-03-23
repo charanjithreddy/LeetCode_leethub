@@ -27,4 +27,3 @@ class Solution(object):
         :type grid: List[List[int]]
         :rtype: int
         """
-        
