@@ -12,16 +12,18 @@ class Solution(object):
         rl=list(p);
         for i in range(len(rl)-2,-1,-1):
             rl[i]*=rl[i+1]%12345;
-        res=[rl[1]];
-        res.extend([lr[i-1]*rl[i+1] for i in range(1,len(lr)-1)]);
-        res.append(lr[-2]);
-        ind=0;
         for i in range(m):
             for j in range(n):
-                grid[i][j]=res[ind]%12345;
-                ind+=1
+                ind=i*n+j
+                if(ind==0):
+                    grid[i][j]=rl[1]%12345;
+                elif(ind==m*n-1):
+                    grid[i][j]=lr[-2]%12345;
+                else:
+                    grid[i][j]=(lr[ind-1]*rl[ind+1])%12345
         return grid
         """
         :type grid: List[List[int]]
         :rtype: List[List[int]]
         """
+        
