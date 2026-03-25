@@ -8,21 +8,20 @@ class Solution(object):
             for j in range(n):
                 r[i]+=grid[i][j];
                 c[j]+=grid[i][j];
-        rowsum=sum(r);
+        s=sum(r);
         t=0;
         for i in r:
             t+=i;
-            if(t==rowsum-t):
+            if(t==s-t):
                 return True;
-        colsum=sum(c);
+        s=sum(c);
         t=0;
         for i in c:
             t+=i;
-            if(t==colsum-t):
+            if(t==s-t):
                 return True;
         return False
         """
         :type grid: List[List[int]]
         :rtype: bool
         """
-        
