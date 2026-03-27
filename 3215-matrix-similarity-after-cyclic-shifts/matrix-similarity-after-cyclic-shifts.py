@@ -1,6 +1,5 @@
 class Solution(object):
     def areSimilar(self, mat, k):
-        temp=list(mat);
         m=len(mat);
         n=len(mat[0]);
         k%=n;
@@ -8,11 +7,9 @@ class Solution(object):
             if(i%2==0):
                 if(mat[i]!=mat[i][k:]+mat[i][:k]):
                     return False;
-                #mat[i]=mat[i][k:]+mat[i][:k];
             else:
                 if(mat[i]!=mat[i][n-k:]+mat[i][:n-k]):
                     return False;
-                #mat[i]=mat[i][n-k:]+mat[i][:n-k];
         return True
         """
         :type mat: List[List[int]]
