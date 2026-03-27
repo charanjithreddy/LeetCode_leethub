@@ -6,13 +6,16 @@ class Solution(object):
         k%=n;
         for i in range(m):
             if(i%2==0):
-                mat[i]=mat[i][k:]+mat[i][:k];
+                if(mat[i]!=mat[i][k:]+mat[i][:k]):
+                    return False;
+                #mat[i]=mat[i][k:]+mat[i][:k];
             else:
-                mat[i]=mat[i][n-k:]+mat[i][:n-k];
-        return mat==temp
+                if(mat[i]!=mat[i][n-k:]+mat[i][:n-k]):
+                    return False;
+                #mat[i]=mat[i][n-k:]+mat[i][:n-k];
+        return True
         """
         :type mat: List[List[int]]
         :type k: int
         :rtype: bool
         """
-        
