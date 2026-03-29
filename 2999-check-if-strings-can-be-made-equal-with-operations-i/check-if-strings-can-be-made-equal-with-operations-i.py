@@ -1,15 +1,8 @@
 class Solution(object):
     def canBeEqual(self, s1, s2):
-        if(s1[0]==s2[0] and s1[1]==s2[1] and s1[2]==s2[2] and s1[3]==s2[3]):
+        if(sorted([s1[0],s1[2]])==sorted([s2[0],s2[2]]) and sorted([s1[1],s1[3]])==sorted([s2[1],s2[3]])):
             return True;
-        elif(s1[2]==s2[0] and s1[1]==s2[1] and s1[0]==s2[2] and s1[3]==s2[3]):
-            return True;
-        elif(s1[0]==s2[0] and s1[3]==s2[1] and s1[2]==s2[2] and s1[1]==s2[3]):
-            return True;
-        elif(s1[2]==s2[0] and s1[3]==s2[1] and s1[0]==s2[2] and s1[1]==s2[3]):
-            return True;
-        else:
-            return False
+        return False
         """
         :type s1: str
         :type s2: str
