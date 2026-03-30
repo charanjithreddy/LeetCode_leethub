@@ -11,7 +11,7 @@ class Solution(object):
             else:
                 s1_odd[ord(s1[i])-ord('a')]+=1
                 s2_odd[ord(s2[i])-ord('a')]+=1
-        return (s1_even)==(s2_even) and (s1_odd)==(s2_odd)
+        return s1_even==s2_even and s1_odd==s2_odd
         """
         :type s1: str
         :type s2: str
