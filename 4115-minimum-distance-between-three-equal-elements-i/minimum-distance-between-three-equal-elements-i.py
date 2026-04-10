@@ -5,11 +5,10 @@ class Solution(object):
             for j in range(i+1,len(nums)):
                 for k in range(j+1,len(nums)):
                     if(nums[i]==nums[j]==nums[k]):
-
                         if(res==-1):
-                            res=abs(i - j) + abs(j - k) + abs(k - i)
+                            res=abs(i-j)+abs(j-k)+abs(k-i)
                         else:
-                            res=min(res,abs(i - j) + abs(j - k) + abs(k - i))
+                            res=min(res,abs(i-j)+abs(j-k)+abs(k-i))
         return res
         """
         :type nums: List[int]
