@@ -16,4 +16,3 @@ class Solution(object):
         :type colors: List[int]
         :rtype: int
         """
-        
