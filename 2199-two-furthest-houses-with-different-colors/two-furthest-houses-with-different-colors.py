@@ -1,16 +1,15 @@
 class Solution(object):
     def maxDistance(self, colors):
-        d={};
-        for i in range(len(colors)):
-            if(colors[i] in d):
-                d[colors[i]].append(i);
-            else:
-                d[colors[i]]=[i];
+        n=len(colors)
         res=float("-inf");
-        for i in d:
-            for j in d:
-                if(i!=j):
-                    res=max(res,max(d[i])-min(d[j]),max(d[j])-min(d[i]));
+        for i in range(n):
+            if(colors[i]!=colors[-1]):
+                res=max(res,n-i-1);
+                break;
+        for i in range(n-1,-1,-1):
+            if(colors[i]!=colors[0]):
+                res=max(res,i);
+                break
         return res
         """
         :type colors: List[int]
