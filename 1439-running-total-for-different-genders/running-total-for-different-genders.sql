@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+select s1.gender,s1.day,sum(s2.score_points) as total from scores s1 left join scores s2 on s2.day<=s1.day and s1.gender=s2.gender group by s1.gender,s1.day order by s1.gender,s1.day
