@@ -1,11 +1,18 @@
 class Solution(object):
     def rotate(self, matrix):
+        temp=[];
         n=len(matrix);
-        matrix.reverse();
         for i in range(n):
-            for j in range(i+1,n):
-                matrix[i][j],matrix[j][i]=matrix[j][i],matrix[i][j];
+            t=[];
+            for j in range(n):
+                t.append(matrix[j][i]);
+            temp.append(t[::-1])
+        for i in range(n):
+            for j in range(n):
+                matrix[i][j]=temp[i][j]
+
         """
         :type matrix: List[List[int]]
         :rtype: None Do not return anything, modify matrix in-place instead.
         """
+        
