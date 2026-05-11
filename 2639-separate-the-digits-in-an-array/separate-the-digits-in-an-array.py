@@ -2,7 +2,11 @@ class Solution(object):
     def separateDigits(self, nums):
         res=[];
         for i in nums:
-            res.extend([int(j) for j in str(i)]);
+            t=[];
+            while(i>0):
+                t.append(i%10);
+                i//=10;
+            res.extend(t[::-1])
         return res
         """
         :type nums: List[int]
