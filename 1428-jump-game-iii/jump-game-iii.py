@@ -2,12 +2,11 @@ class Solution(object):
     def canReach(self, arr, start):
         self.res=False;
         def func(ind,s):
-            if(self.res==True):
-                return;
-            if(ind in s):
+            if(self.res==True or ind in s):
                 return;
             if(arr[ind]==0):
                 self.res=True;
+                return;
             s.add(ind);
             if(ind+arr[ind]<len(arr)):
                 func(ind+arr[ind],s);
@@ -20,4 +19,3 @@ class Solution(object):
         :type start: int
         :rtype: bool
         """
-        
