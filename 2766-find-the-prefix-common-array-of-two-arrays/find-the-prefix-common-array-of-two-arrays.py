@@ -8,8 +8,13 @@ class Solution(object):
         cnt=0;
         for i in range(n):
             d[A[i]]+=1;
+            if(d[A[i]]==2):
+                cnt+=1;
             d[B[i]]+=1;
-            C.append(list(d.values()).count(2));
+            if(d[B[i]]==2):
+                cnt+=1;
+            C.append(cnt)
+
         return C
         """
         :type A: List[int]
