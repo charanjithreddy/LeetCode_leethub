@@ -1,23 +1,17 @@
 class Solution(object):
     def coinChange(self, coins, amount):
-        arr=[-1]*(amount+1)
-        arr[0]=0;
+        dp=[-1]*(amount+1)
+        dp[0]=0;
         coins.sort()
-        for i in range(amount+1):
-            if(arr[i]==-1):
-                continue
-            for coin in coins:
-                if(i+coin>amount):
+        for i in range(len(dp)):
+            for j in coins:
+                if(i+j>=len(dp)):
                     break
-                if(arr[i+coin]==-1):
-                    arr[i+coin]=arr[i]+1;
-                else:
-                    arr[i+coin]=min(arr[i+coin],arr[i]+1);
-        return arr[-1]
-
-
-
-
+                if(dp[i+j]==-1 and dp[i]!=-1):
+                    dp[i+j]=dp[i]+1;
+                elif(dp[i]!=-1):
+                    dp[i+j]=min(dp[i+j],dp[i]+1);
+        return dp[amount]
         """
         :type coins: List[int]
         :type amount: int
