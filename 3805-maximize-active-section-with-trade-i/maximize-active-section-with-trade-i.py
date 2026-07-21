@@ -1,10 +1,8 @@
 class Solution(object):
     def maxActiveSectionsAfterTrade(self, s):
         t=[];
-        ones=0;
+        ones=s.count("1")
         for i in s:
-            if(i=="1"):
-                ones+=1;
             if(not t):
                 t.append(i);
             else:
