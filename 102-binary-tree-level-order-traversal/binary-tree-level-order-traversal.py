@@ -7,19 +7,23 @@
 class Solution(object):
     def levelOrder(self, root):
         res=[];
-        queue=[root];
-        while(len(queue)>0):
-            t=[];
-            for i in range(len(queue)):
-                temp=queue.pop(0);
-                if(temp!=None):
-                    t.append(temp.val);
-                    queue.append(temp.left);
-                    queue.append(temp.right);
-            if(len(t)>0):
-                res.append(t);
-        return res;
+        if(root):
+            res.append(root)
+        result=[];
+        while(res):
+            result.append([])
+            temp=[];
+            for i in res:
+                t=i
+                result[-1].append(t.val);
+                if(t.left):
+                    temp.append(t.left);
+                if(t.right):
+                    temp.append(t.right);
+            res=temp
+        return result
         """
         :type root: Optional[TreeNode]
         :rtype: List[List[int]]
         """
+        
