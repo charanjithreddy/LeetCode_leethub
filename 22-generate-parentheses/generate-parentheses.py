@@ -1,17 +1,17 @@
 class Solution(object):
     def generateParenthesis(self, n):
         res=set();
-        def func(open,close,s):
-            if(open==close):
-                if(open==n):
+        def func(left,right,s):
+            if(left==right):
+                if(left==n):
                     res.add(s);
                     return;
                 else:
-                    func(open+1,close,s+"(");
-            if(open<n):
-                func(open+1,close,s+"(");
-            if(close<open):
-                func(open,close+1,s+")")
+                    func(left+1,right,s+"(");
+            if(left<n):
+                func(left+1,right,s+"(");
+            if(right<left):
+                func(left,right+1,s+")")
         func(1,0,"(");
         return list(res);
         """
